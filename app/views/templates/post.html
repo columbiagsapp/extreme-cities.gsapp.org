@@ -1,0 +1,96 @@
+<div id="post-<%= data._id %>" class="<% if(data.type == 'built' || data.type == 'unbuilt'){ %>project-post<% }else{ %>note-post<% } %>">
+                <% if(data.type == 'built' 
+                        || data.type == 'unbuilt'){ %>
+
+                    <% if(data.image){ %>
+                      <div class="image-container">
+                        <img class="image" src="/images/thumbnails/<%= data.image.split('.')[0] %>.png" />
+
+                        <% if(data.urban_qualities){ %>
+                          <% for(var q = 0; q < data.urban_qualities.length; q++){ %>
+                            <div class="quality-mark quality-mark-<%= data.urban_qualities[q] %>"></div>
+                          <% } %>
+                        <% } %>
+
+                      </div>
+                    <% } %>
+
+                    <div class="project-title">
+                     <div><%= data.title %></div>
+
+                     <% if(data.location_city){ %>
+                      <% if(data.location_state){ %>
+                        <div class="project-location"><%= data.location_city %>, <%= data.location_state %></div>
+                      <% }else{ %>
+                        <div class="project-location"><%= data.location_city %></div>
+                      <% } %>
+                     <% }else if(data.location_state){ %>
+                      <div class="project-location"><%= data.location_state %></div>
+                     <% } %>
+
+                     
+                    </div>
+                    <% if(data.end_date){ %>
+                      <div class="year"><%= (new Date(data.end_date)).getFullYear() %></div>
+                    <% } %>
+                    <% if(data.description_teaser){ %>
+                      <div class="description"><%= data.description_teaser %></div>
+                    <% }else{ %>
+                      <div class="description"></div>
+                    <% } %>
+                    <a class="more" href="/api/post/<%= data._id %>">MORE</a>
+                <% }else if(data.type == 'book' || data.type == 'film'){ %>
+
+                    <% if(data.end_date){ %>
+                      <div class="year"><%= (new Date(data.end_date)).getFullYear() %></div>
+                    <% } %>
+                    <div class="note-title">
+                      <%= data.authors %>,<br>
+                      <span class="booktitle"><%= data.title %></span>
+                    </div>
+                    
+                <% }else if(data.type == 'policy'){ %>
+
+                    <% if(data.end_date){ %>
+                      <div class="year"><%= (new Date(data.end_date)).getFullYear() %></div>
+                    <% } %>
+                    <div class="note-title">
+                      <%= data.title %>
+                    </div>
+                    <% if(data.description){ %>
+                      <div class="description"><%= data.description %></div>
+                    <% } %>
+                <% }else if(data.type == 'plan' || data.type == 'event'){ %>
+                  
+                    <% if(data.end_date){ %>
+                      <div class="year"><%= (new Date(data.end_date)).getFullYear() %></div>
+                    <% } %>
+                    <div class="note-title">
+                      <%= data.title %>
+                    </div>
+                    <% if(data.location_city){ %>
+                      <% if(data.location_state){ %>
+                        <div class="project-location"><%= data.location_city %>, <%= data.location_state %></div>
+                      <% }else{ %>
+                        <div class="project-location"><%= data.location_city %></div>
+                      <% } %>
+                     <% }else if(data.location_state){ %>
+                      <div class="project-location"><%= data.location_state %></div>
+                     <% } %>
+                     <% if(data.description){ %>
+                        <div class="description"><%= data.description %></div>
+                      <% } %>
+                <% }else if(data.type == 'quote'){ %>
+                  
+                      <% if(data.end_date){ %>
+                        <div class="year"><%= (new Date(data.end_date)).getFullYear() %></div>
+                      <% } %>
+                      <div class="note-title">
+                        <%= data.title %>
+                      </div>
+                      <% if(data.authors){ %>
+                        <div class="description"><%= data.authors %></div>
+                      <% } %>
+                <% } %>
+              </div>
+      

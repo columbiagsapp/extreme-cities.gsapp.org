@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html> 
+  <head>
+    <%- partial('partials/head', {title:title}) %>
+  </head> 
+
+
+  <body>
+
+    <div id="wrapper">  
+      <%- partial('partials/header') %>
+      <div id="push-top"></div>
+
+      <div id="login">
+        <form action="/login" method="post">
+			<div>
+			<label>Username:</label>
+			<input type="text" name="username"/><br/>
+			</div>
+			<div>
+			<label>Password:</label>
+			<input type="password" name="password"/>
+			</div>
+			<div>
+			<input type="submit" value="Submit"/>
+			</div>
+		</form>
+      </div><!-- /#login -->
+
+      
+
+      <div id="push-bottom"></div>
+      <%- partial('partials/footer') %>
+    </div><!-- /#wrapper -->
+      
+
+    <%- partial('partials/scripts') %>
+
+  </body>
+</html>
+

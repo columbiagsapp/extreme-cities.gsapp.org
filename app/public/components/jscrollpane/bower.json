@@ -1,0 +1,8 @@
+{
+  "name": "jscrollpane",
+  "version": "2.0.14",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/vitch/jScrollPane.git"
+  }
+}

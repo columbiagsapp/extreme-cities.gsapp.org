@@ -1,0 +1,91 @@
+<div id="post-full">
+  <div class="inner">
+    <div id="post-<%= data._id %>" class="project-post">
+
+      <% if(data.image){ %>
+        <div class="image-container">
+          <img class="image" src="/images/full/<%= data.image.split('.')[0] %>.png" />
+
+          <% if(data.urban_qualities){ %>
+            <% for(var q = 0; q < data.urban_qualities.length; q++){ %>
+              <div class="quality-mark quality-mark-<%= data.urban_qualities[q] %>"></div>
+            <% } %>
+          <% } %>
+
+        </div>
+      <% } %>
+
+      <div class="left">
+        <div class="project-title">
+         <div><%= data.title %></div>
+
+         <% if(data.location_city){ %>
+          <% if(data.location_state){ %>
+            <div class="project-location"><%= data.location_city %>, <%= data.location_state %></div>
+          <% }else{ %>
+            <div class="project-location"><%= data.location_city %></div>
+          <% } %>
+         <% }else if(data.location_state){ %>
+          <div class="project-location"><%= data.location_state %></div>
+         <% } %>
+        </div>
+
+        <% if(data.end_date){ %>
+          <div class="year"><%= (new Date(data.end_date)).getFullYear() %></div>
+        <% } %>
+
+        <div class="info-container">
+
+          <% if(data.designers){ %>
+            <div class="info designers">Designers: <%= data.designers %></div>
+          <% } %>
+
+          <% if(data.urban_qualities){ %>
+            <% if(data.urban_qualities.length > 0){ %>
+              <div class="info qualities">Qualities:&nbsp;
+                <% for(var q = 0; q < data.urban_qualities.length; q++){ %>
+                  <span class="filter"><% var qual = data.urban_qualities[q].charAt(0).toUpperCase() + data.urban_qualities[q].substr(1); %><%= qual %></span><% if(q < (data.urban_qualities.length-1)){ %>,<% } %>&nbsp;
+                <% } %>
+              </div>
+            <% } %>
+          <% } %>
+
+          <% if(data.type){ %>
+            <div class="info type">Type: <%= data.type %></div>
+          <% } %>
+
+          <% if(data.tags){ %>
+            <% if(data.tags.length > 0){ %>
+              <div class="info tags">Tags:&nbsp;
+                <% for(var t = 0; t < data.tags.length; t++){ %>
+                  <span><% var tag = data.tags[t].charAt(0).toUpperCase() + data.tags[t].substr(1); %><%= tag %><% if(q < (data.tags.length-1)){ %>,<% } %></span>&nbsp;
+                <% } %>
+              </div>
+            <% } %>
+          <% } %>
+
+          <% if(data.source){ %>
+            <div class="info source">Source: <%= data.source %></div>
+          <% } %>
+
+          <% if(data.submitted_by){ %>
+            <div class="info submitted-by">Submitted By: <%= data.submitted_by %></div>
+          <% } %>
+        </div><!-- /.info-container -->
+
+      </div><!-- /.left -->
+
+      <div class="right">
+        <% if(data.description){ %>
+          <div class="description"><%= data.description %></div>
+        <% } %>
+      </div><!-- /.right -->
+
+        
+        
+      
+
+    </div>
+  </div><!-- /.inner -->
+  <a class="close" href="/">CLOSE</a>
+</div>

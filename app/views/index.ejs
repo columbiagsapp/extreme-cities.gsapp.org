@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html> 
+  <head>
+    <%- partial('partials/head', {title:title}) %>
+  </head> 
+
+
+  <body>
+
+    <div id="wrapper">  
+      <%- partial('partials/header') %>
+      <div id="push-top"></div>
+
+      <div id="timeline-wrapper">
+        <ul id="timeline" class="clearfix">
+        </ul><!-- /#timeline -->
+      </div><!-- /#timeline-wrapper -->
+
+      <div id="lightbox-el"></div>
+      <div id="lightbox-bg"></div>
+
+      <div id="push-bottom"></div>
+      <%- partial('partials/footer') %>
+    </div><!-- /#wrapper -->
+      
+
+    <%- partial('partials/scripts') %>
+
+  </body>
+</html>

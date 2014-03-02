@@ -1,0 +1,13 @@
+{
+  "name": "GSAPP Extreme Cities",
+  "version": "0.0.1",
+  "dependencies": {
+    "requirejs": null,
+    "jquery": null,
+    "backbone-amd": null,
+    "underscore-amd": null,
+    "jquery-ui": null,
+    "jscrollpane": null,
+    "jquery-mousewheel": null
+  }
+}
