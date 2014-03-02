@@ -1,0 +1,20 @@
+{
+    "name": "Extreme Cities",
+    "url": "extreme-cities.gsapp.org",
+    "version": "1.0",
+    "thumbnail": "screenshot.png",
+    "contributors": [
+        {
+            "name": "Troy Conrad Therrien",
+            "username": "troyth",
+            "role": "tech lead"
+        },
+        {
+            "name": "Leigha Dennis",
+            "username": "lleigha",
+            "role": "design lead"
+        }
+    ],
+    "dependencies": [
+    ]
+}
